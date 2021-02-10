@@ -1,14 +1,18 @@
 .navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
+  width: 100vw;
   background: rgb(69, 82, 100);
   color: white;
 }
 
 .navLinks {
-  width: 40%;
+  width: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;

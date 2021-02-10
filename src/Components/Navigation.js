@@ -19,9 +19,9 @@ function Navigation() {
         <Link style={navStyle} to="/shoppingcart">
           <li>Shopping Cart</li>
         </Link>
-        <Link style={navStyle} to="/item">
+        {/* <Link style={navStyle} to="/item">
           <li>Item</li>
-        </Link>
+        </Link> */}
       </ul>
     </nav>
   );
