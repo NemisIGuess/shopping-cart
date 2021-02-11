@@ -7,14 +7,46 @@
   align-items: center;
   min-height: 10vh;
   width: 100vw;
-  background: rgb(69, 82, 100);
-  color: white;
+  color: var(--white);
 }
 
-.navLinks {
+.navList {
   width: 30%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+
+.navLink {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.navLink:active,
+.navLink:hover,
+.navLink:focus,
+.navLink:link,
+.navLink:visited {
+  text-decoration: none;
+}
+
+.cartImage {
+  width: 2em;
+  height: 2em;
+  caret-color: transparent;
+}
+
+.itemCounter {
+  position: absolute;
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  font-size: 0.5em;
+  line-height: 20px;
+  text-align: center;
+  color: var(--grey);
 }
