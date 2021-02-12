@@ -131,7 +131,7 @@ const database = [
 ];
 
 const getter = () => {
-  console.log(database[1]);
+  return database;
 };
 
 export { getter };

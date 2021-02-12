@@ -8,6 +8,7 @@
   min-height: 10vh;
   width: 100vw;
   color: var(--white);
+  background-color: var(--grey);
 }
 
 .navList {

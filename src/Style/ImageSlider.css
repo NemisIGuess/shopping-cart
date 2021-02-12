@@ -1,0 +1,14 @@
+.imageSlider {
+  padding-top: 10vh;
+  margin: 0 auto;
+}
+
+.image {
+  height: 350px;
+}
+
+.image:hover {
+  content: 'Smallworld';
+  font-size: 3em;
+  color: white;
+}
