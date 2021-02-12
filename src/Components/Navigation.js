@@ -2,12 +2,9 @@ import '../Style/Navigation.css';
 import { Link } from 'react-router-dom';
 import shoppingCart from '../Images/ShoppingCart.png';
 import { useState } from 'react';
-import { getter } from './Database';
 
 function Navigation() {
   const [itemCounter, setItemCounter] = useState(13);
-
-  getter();
 
   return (
     <nav className="navigation">
@@ -29,9 +26,14 @@ function Navigation() {
             <span className="itemCounter">{itemCounter}</span>
           </li>
         </Link>
-        {/* <Link style={navStyle} to="/item">
-          <li>Item</li>
-        </Link> */}
+        <Link
+          to={{
+            pathname: '/modal/1',
+            state: { modal: true },
+          }}
+        >
+          Open Modal
+        </Link>
       </ul>
     </nav>
   );
