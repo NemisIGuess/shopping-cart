@@ -1,12 +1,11 @@
 .navigation {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: navigation;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 35vw;
   color: var(--white);
   background-color: var(--grey);
 }
@@ -14,6 +13,7 @@
 .navList {
   width: 30%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   list-style: none;

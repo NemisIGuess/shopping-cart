@@ -16,3 +16,12 @@ code {
   --grey: rgb(46, 54, 65);
   --white: rgb(255, 255, 255);
 }
+
+#root {
+  display: grid;
+  grid-template-columns: 35vw 1fr;
+  grid-template-rows: 1fr;
+  /* justify-content: center;
+  align-items: center; */
+  grid-template-areas: 'navigation content';
+}
