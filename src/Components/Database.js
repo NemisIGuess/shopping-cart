@@ -37,7 +37,7 @@ import SWBanner from '../Images/SmallworldBanner.jpg';
 import SW01 from '../Images/Smallworld01.png';
 import SW02 from '../Images/Smallworld02.png';
 
-const database = [
+const _database = [
   {
     game: 'Age of Thieves',
     banner: AoTBanner,
@@ -130,8 +130,8 @@ const database = [
   },
 ];
 
-const getter = () => {
-  return database;
+const getDB = () => {
+  return _database;
 };
 
-export { getter };
+export { getDB };

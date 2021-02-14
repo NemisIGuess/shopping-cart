@@ -1,5 +1,6 @@
 .landing {
-  width: 100vw;
-  height: 100vh;
   background-color: black;
+  grid-area: content;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
 }

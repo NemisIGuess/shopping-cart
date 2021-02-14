@@ -26,14 +26,6 @@ function Navigation() {
             <span className="itemCounter">{itemCounter}</span>
           </li>
         </Link>
-        <Link
-          to={{
-            pathname: '/modal/1',
-            state: { modal: true },
-          }}
-        >
-          Open Modal
-        </Link>
       </ul>
     </nav>
   );
