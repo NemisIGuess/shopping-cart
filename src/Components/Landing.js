@@ -5,11 +5,10 @@ import _ from 'lodash';
 function Landing() {
   const database = getDB();
 
-  const gameBanners = _.sampleSize(database, 3);
-  console.log(gameBanners);
+  const gamesToDisplay = _.sampleSize(database, 3);
   return (
     <div className="landing">
-      {gameBanners.map((game) => {
+      {gamesToDisplay.map((game) => {
         return (
           <div
             style={{

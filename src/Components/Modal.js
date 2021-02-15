@@ -2,9 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import '../Style/Modal.css';
 import Item from './Item';
+import { getDB } from './Database';
 
 const Modal = (props) => {
   const history = useHistory();
+  const database = getDB();
 
   const closeModal = (e) => {
     e.stopPropagation();
@@ -13,13 +15,17 @@ const Modal = (props) => {
 
   const gameName = props.location.pathname.split('/')[2];
 
-  console.log(gameName);
+  let gameClicked = {};
+  database.map((game) => {
+    if (game.game === gameName) {
+      return (gameClicked = game);
+    }
+    return null;
+  });
 
   return (
-    <div>
-      <div className="modalWrapper" onClick={closeModal}>
-        <Item name={gameName} />
-      </div>
+    <div className="modalWrapper">
+      <Item game={gameClicked} close={closeModal} />
     </div>
   );
 };

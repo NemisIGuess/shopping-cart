@@ -1,5 +1,17 @@
 .landing {
-  background-color: black;
-  display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-area: content;
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.banner {
+  height: 33.3%;
+}
+
+@media screen and (max-width: 880px) {
+  .landing {
+    height: calc(100vh - 200px);
+  }
 }

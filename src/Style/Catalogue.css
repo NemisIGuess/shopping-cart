@@ -1,7 +1,7 @@
 .catalogue {
   width: 100%;
   height: 100%;
-  background-color: rgb(83, 104, 143);
+  background-color: var(--blue);
   grid-area: content;
   display: grid;
   align-items: center;
@@ -35,4 +35,33 @@
   display: inline;
   text-align: right;
   margin-right: 1em;
+}
+
+.imageSlider {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  width: 40px;
+  cursor: pointer;
+  color: var(--grey);
+}
+
+.leftArrow {
+  top: 50%;
+  left: -1em;
+  -webkit-filter: drop-shadow(-2px -2px 3px rgb(255, 255, 255))
+    drop-shadow(2px 2px 3px rgb(255, 255, 255));
+  filter: drop-shadow(-2px -2px 3px rgb(255, 255, 255))
+    drop-shadow(2px 2px 3px rgb(255, 255, 255));
+}
+
+.rightArrow {
+  top: 50%;
+  left: 90%;
+  -webkit-filter: drop-shadow(-2px -2px 3px rgb(255, 255, 255))
+    drop-shadow(2px 2px 3px rgb(255, 255, 255));
+  filter: drop-shadow(-2px -2px 3px rgb(255, 255, 255))
+    drop-shadow(2px 2px 3px rgb(255, 255, 255));
 }

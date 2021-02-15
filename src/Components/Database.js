@@ -37,13 +37,15 @@ import SWBanner from '../Images/SmallworldBanner.jpg';
 import SW01 from '../Images/Smallworld01.png';
 import SW02 from '../Images/Smallworld02.png';
 
+import { useContext } from 'react';
+
 const _database = [
   {
     game: 'Age of Thieves',
     banner: AoTBanner,
     images: [AoT01, AoT02, AoT03],
     players: '2-4',
-    time: '90 minutes',
+    time: '90 minutos',
     ages: '14+',
     price: '59,95€',
   },
@@ -52,7 +54,7 @@ const _database = [
     banner: AATBanner,
     images: [AAT01, AAT02, AAT03],
     players: '2-5',
-    time: '30-60 minutes',
+    time: '30-60 minutos',
     ages: '8+',
     price: '43,95€',
   },
@@ -70,7 +72,7 @@ const _database = [
     banner: BrBBanner,
     images: [BrB01, BrB02, BrB03],
     players: '3-8',
-    time: '60-120 minutes',
+    time: '60-120 minutos',
     ages: '18+',
     price: '39,95€',
   },
@@ -79,7 +81,7 @@ const _database = [
     banner: DoWBanner,
     images: [DoW01, DoW02, DoW03],
     players: '2-5',
-    time: '60-120 minutes',
+    time: '60-120 minutos',
     ages: '14+',
     price: '59,95€',
   },
@@ -88,7 +90,7 @@ const _database = [
     banner: EthnosBanner,
     images: [Ethnos01, Ethnos02, Ethnos03],
     players: '2-6',
-    time: '45-60 minutes',
+    time: '45-60 minutos',
     ages: '14+',
     price: '39,99€',
   },
@@ -97,7 +99,7 @@ const _database = [
     banner: M44Banner,
     images: [M4401, M4402],
     players: '2',
-    time: '30-60 minutes',
+    time: '30-60 minutos',
     ages: '8+',
     price: '53,95€',
   },
@@ -106,7 +108,7 @@ const _database = [
     banner: NemesisBanner,
     images: [Nemesis01, Nemesis02, Nemesis03],
     players: '1-5',
-    time: '60-120 minutes',
+    time: '60-120 minutos',
     ages: '14+',
     price: '149,99€',
   },
@@ -115,7 +117,7 @@ const _database = [
     banner: RWBanner,
     images: [RW01, RW02, RW03],
     players: '2',
-    time: '30-45 minutes',
+    time: '30-45 minutos',
     ages: '14+',
     price: '89,95€',
   },
@@ -124,14 +126,26 @@ const _database = [
     banner: SWBanner,
     images: [SW01, SW02],
     players: '2-5',
-    time: '40-80 minutes',
+    time: '40-80 minutos',
     ages: '8+',
     price: '47,95€',
   },
 ];
 
+const _cart = [];
+
 const getDB = () => {
   return _database;
 };
 
-export { getDB };
+const getCartItems = () => {
+  return _cart.length();
+};
+
+const setItemOnCart = (game) => {
+  const gameToAdd = _database.find((item) => game === item.game);
+  _cart.push(gameToAdd);
+  console.log(_cart);
+};
+
+export { getDB, setItemOnCart, getCartItems };
