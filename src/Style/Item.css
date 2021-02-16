@@ -1,6 +1,6 @@
 .item {
   width: fit-content;
-  height: fit-content;
+  height: 530px;
   background-image: linear-gradient(
     to left,
     var(--white),
@@ -51,6 +51,7 @@
     flex-direction: column;
     top: 0%;
     left: 0;
+    height: fit-content;
   }
 
   .imageSlider {

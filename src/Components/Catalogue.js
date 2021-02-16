@@ -1,21 +1,12 @@
 import '../Style/Catalogue.css';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getDB, setItemOnCart } from './Database';
+import { DatabaseContext, CartContext } from './Database';
 
 function Catalogue() {
-  const database = getDB();
+  const database = useContext(DatabaseContext);
+  const cart = useContext(CartContext);
   const location = useLocation();
-
-  useEffect(() => {
-    const itemBtn = [...document.querySelectorAll('.catalogueBtn')];
-
-    itemBtn.map((button) => {
-      button.addEventListener('click', (e) => {
-        setItemOnCart(e.target.value);
-      });
-    });
-  }, []);
 
   return (
     <div className="catalogue">
@@ -36,7 +27,13 @@ function Catalogue() {
             </Link>
             <div className="catalogueExtras">
               <p className="cataloguePrice">{game.price}</p>
-              <button value={game.game} className="catalogueBtn">
+              <button
+                onClick={(e) => {
+                  cart.addItemToCart(e.target.value);
+                }}
+                value={game.game}
+                className="catalogueBtn"
+              >
                 Add to Cart
               </button>
             </div>

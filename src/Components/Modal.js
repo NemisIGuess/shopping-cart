@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../Style/Modal.css';
 import Item from './Item';
-import { getDB } from './Database';
+import { DatabaseContext } from './Database';
 
 const Modal = (props) => {
   const history = useHistory();
-  const database = getDB();
+  const database = useContext(DatabaseContext);
 
   const closeModal = (e) => {
     e.stopPropagation();

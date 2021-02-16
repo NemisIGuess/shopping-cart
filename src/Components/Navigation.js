@@ -1,12 +1,8 @@
 import '../Style/Navigation.css';
 import { Link } from 'react-router-dom';
 import shoppingCart from '../Images/ShoppingCart.png';
-import { useEffect, useState } from 'react';
-import { getCartItems, setItemOnCart } from './Database';
 
 function Navigation() {
-  const [itemCounter, setItemCounter] = useState(0);
-
   return (
     <nav className="navigation">
       <h3>
@@ -27,7 +23,6 @@ function Navigation() {
               className="cartImage"
               src={shoppingCart}
             ></img>
-            <span className="itemCounter">{}</span>
           </li>
         </Link>
       </ul>

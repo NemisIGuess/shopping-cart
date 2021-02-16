@@ -1,9 +1,10 @@
 import '../Style/Landing.css';
-import { getDB } from './Database';
+import { useContext } from 'react';
+import { DatabaseContext } from './Database';
 import _ from 'lodash';
 
 function Landing() {
-  const database = getDB();
+  const database = useContext(DatabaseContext);
 
   const gamesToDisplay = _.sampleSize(database, 3);
   return (

@@ -25,21 +25,6 @@
   color: var(--white);
 }
 
-.topLink {
-  font-size: 1em;
-  font-weight: bold;
-  color: var(--white);
-  align-self: flex-end;
-}
-
-.topLink:active,
-.topLink:hover,
-.topLink:focus,
-.topLink:link,
-.topLink:visited {
-  text-decoration: none;
-}
-
 .navLink:active,
 .navLink:hover,
 .navLink:focus,
@@ -57,19 +42,6 @@
   width: 2em;
   height: 2em;
   caret-color: transparent;
-}
-
-.itemCounter {
-  position: absolute;
-  background-color: var(--white);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  top: -10px;
-  font-size: 0.5em;
-  line-height: 20px;
-  text-align: center;
-  color: var(--grey);
 }
 
 @media screen and (max-width: 880px) {

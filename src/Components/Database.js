@@ -37,7 +37,10 @@ import SWBanner from '../Images/SmallworldBanner.jpg';
 import SW01 from '../Images/Smallworld01.png';
 import SW02 from '../Images/Smallworld02.png';
 
-import { useContext } from 'react';
+import React from 'react';
+const Database = () => {};
+
+const DatabaseContext = React.createContext();
 
 const _database = [
   {
@@ -132,20 +135,33 @@ const _database = [
   },
 ];
 
+const CartContext = React.createContext();
+
 const _cart = [];
 
-const getDB = () => {
-  return _database;
-};
+// const [cart, setCart] = React.useState([]);
 
-const getCartItems = () => {
-  return _cart.length();
-};
-
-const setItemOnCart = (game) => {
-  const gameToAdd = _database.find((item) => game === item.game);
+const addItemToCart = (gameName) => {
+  const gameToAdd = _database.find((game) => game.game === gameName);
   _cart.push(gameToAdd);
-  console.log(_cart);
 };
 
-export { getDB, setItemOnCart, getCartItems };
+const removeItemFromCart = (gameName) => {
+  const itemToRemove = _cart.find((game) => game.game === gameName);
+  const indexToRemove = _cart.indexOf(itemToRemove);
+  _cart.splice(indexToRemove, 1);
+};
+
+const AppDatabaseProvider = ({ children }) => {
+  return (
+    <DatabaseContext.Provider value={_database}>
+      <CartContext.Provider
+        value={{ addItemToCart, removeItemFromCart, _cart }}
+      >
+        {children}
+      </CartContext.Provider>
+    </DatabaseContext.Provider>
+  );
+};
+
+export { AppDatabaseProvider, DatabaseContext, CartContext };
