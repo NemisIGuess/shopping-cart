@@ -1,11 +1,13 @@
 import '../Style/ShoppingCart.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from './Database';
 import _ from 'lodash';
 
 function ShoppingCart() {
   const context = useContext(CartContext);
-  const cartItems = context._cart;
+  // const cartItems = context._cart;
+
+  const [cartItems, setCartItems] = useState(context._cart);
 
   return (
     <div className="shoppingCart">

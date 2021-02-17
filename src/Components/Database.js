@@ -38,7 +38,6 @@ import SW01 from '../Images/Smallworld01.png';
 import SW02 from '../Images/Smallworld02.png';
 
 import React from 'react';
-const Database = () => {};
 
 const DatabaseContext = React.createContext();
 
@@ -137,22 +136,33 @@ const _database = [
 
 const CartContext = React.createContext();
 
-const _cart = [];
+// const _cart = [];
 
-// const [cart, setCart] = React.useState([]);
+// const addItemToCart = (gameName) => {
+//   const gameToAdd = _database.find((game) => game.game === gameName);
+//   _cart.push(gameToAdd);
+// };
 
-const addItemToCart = (gameName) => {
-  const gameToAdd = _database.find((game) => game.game === gameName);
-  _cart.push(gameToAdd);
-};
-
-const removeItemFromCart = (gameName) => {
-  const itemToRemove = _cart.find((game) => game.game === gameName);
-  const indexToRemove = _cart.indexOf(itemToRemove);
-  _cart.splice(indexToRemove, 1);
-};
+// const removeItemFromCart = (gameName) => {
+//   const itemToRemove = _cart.find((game) => game.game === gameName);
+//   const indexToRemove = _cart.indexOf(itemToRemove);
+//   _cart.splice(indexToRemove, 1);
+// };
 
 const AppDatabaseProvider = ({ children }) => {
+  const [_cart, setCart] = React.useState([]);
+
+  const removeItemFromCart = (gameName) => {
+    const itemToRemove = _cart.find((game) => game.game === gameName);
+    const indexToRemove = _cart.indexOf(itemToRemove);
+    _cart.splice(indexToRemove, 1);
+  };
+
+  const addItemToCart = (gameName) => {
+    const gameToAdd = _database.find((game) => game.game === gameName);
+    _cart.push(gameToAdd);
+  };
+
   return (
     <DatabaseContext.Provider value={_database}>
       <CartContext.Provider
