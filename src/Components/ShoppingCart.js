@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 function ShoppingCart() {
   const context = useContext(CartContext);
-  // const cartItems = context._cart;
 
   const [cartItems, setCartItems] = useState(context._cart);
 

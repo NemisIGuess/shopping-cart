@@ -136,31 +136,16 @@ const _database = [
 
 const CartContext = React.createContext();
 
-// const _cart = [];
-
-// const addItemToCart = (gameName) => {
-//   const gameToAdd = _database.find((game) => game.game === gameName);
-//   _cart.push(gameToAdd);
-// };
-
-// const removeItemFromCart = (gameName) => {
-//   const itemToRemove = _cart.find((game) => game.game === gameName);
-//   const indexToRemove = _cart.indexOf(itemToRemove);
-//   _cart.splice(indexToRemove, 1);
-// };
-
 const AppDatabaseProvider = ({ children }) => {
   const [_cart, setCart] = React.useState([]);
 
   const removeItemFromCart = (gameName) => {
-    const itemToRemove = _cart.find((game) => game.game === gameName);
-    const indexToRemove = _cart.indexOf(itemToRemove);
-    _cart.splice(indexToRemove, 1);
+    setCart(_cart.filter((game) => game.game !== gameName));
   };
 
   const addItemToCart = (gameName) => {
     const gameToAdd = _database.find((game) => game.game === gameName);
-    _cart.push(gameToAdd);
+    setCart([..._cart, gameToAdd]);
   };
 
   return (
